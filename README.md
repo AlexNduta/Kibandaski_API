@@ -52,3 +52,35 @@ NB: payment should be COD until the payment gateway is delivered
 
 ## `DB`
 - contains any database related code
+
+# Endpoints
+
+## Data Retrieval
+`GET /Kibandaski/categories`: 
+Returns a list of all products categories
+
+`GET /Kibandaski/categoryID/products`
+- Lists all items in a specific category identified by a category ID
+
+`GET /Kibandaski/{categoryID}/{productID}`: 
+Returns a specific item with an ID in a specified categoryID
+
+## Search Functionality
+`GET /Kibandaski/search`:
+- Allows users to search for products by various criteria
+- keyword: search by product name or brand
+- category: search within a specific category(e.g **/search?category=Baby+and+Kids**)
+
+## Price comparison
+
+`GET Kibandaski/{categoryID}/{productID}/compare`
+Takes a product ID and returns prices from diferent supermarkets
+
+# Order Management
+
+`POST Kibandaski/orders` 
+- allow users  to create new orders.
+- includes product ID, quantity and delivery info
+`GET /Kibandaski/{order_id}`
+- Retrieves details of a specific order identified by a unique ID
+
